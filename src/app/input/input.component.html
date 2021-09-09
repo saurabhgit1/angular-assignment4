@@ -1,0 +1,35 @@
+<p>input works!</p>
+
+<div class="container">
+  <h1 class="text-center">File Upload</h1>
+
+  <div class="container">
+    <form [formGroup]="myFormData">
+      <label>Title: </label>
+      <input formControlName="title" class="form-control" type="text" /><br />
+      <input
+        type="file"
+        class="form-control"
+        (change)="onFileSelected($event)"
+      />
+      <br />
+      <input
+        type="file"
+        class="form-control"
+        (change)="onFileSelected($event)"
+      />
+      <br />
+      <button type="button" (click)="onUpload()" class="btn btn-primary mb-4">
+        Upload Files
+      </button>
+    </form>
+  </div>
+
+  <div class="text-center">
+    <button routerLink="/input/display" class="btn btn-primary">
+      Go To Next Page
+    </button>
+  </div>
+</div>
+
+<!-- <img src="{{shortLink}}" alt=""> -->

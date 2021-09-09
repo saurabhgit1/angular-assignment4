@@ -1,0 +1,25 @@
+<div class="container">
+  <p>display works!</p>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">id</th>
+        <th scope="col">Thumbnail</th>
+        <th scope="col">Photo</th>
+      </tr>
+    </thead>
+    <ng-container *ngFor="let photo of data_photo">
+      <tr>
+        <th scope="row">{{ photo.id }}</th>
+        <td><img [src]="photo.thumbnailUrl" alt="" /></td>
+        <td><img [src]="photo.url" alt="" /></td>
+      </tr>
+    </ng-container>
+    <tbody>
+      
+    </tbody>
+  </table>
+
+  <button routerLink="/input/display/display2">Go to 3rd Page</button>
+</div>

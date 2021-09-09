@@ -11,7 +11,6 @@ export class InputComponent implements OnInit {
 
     title: string;
     shortLink =[];
-    // tempShortLink: any;
     loading: boolean = false; // Flag variable
     file: File = null;
     json1={
@@ -20,11 +19,7 @@ export class InputComponent implements OnInit {
       "image2_url":''
     }
 
-    // myFormData = this.fb.group({
-    //   title: '',
-    // });
-
-  // selectedFile: File;
+    
   constructor(private photoService: PhotosService) { }
 
   ngOnInit(): void {
@@ -45,12 +40,10 @@ export class InputComponent implements OnInit {
     }
     var reader = new FileReader();
     reader.readAsDataURL(event.target.files[0]);
-    // this.File = event.target.files[0];
     reader.onload = (_event) => {
       this.shortLink.push(reader.result);
       // this.tempShortLink = reader.result;
       // console.log(this.url);
-      // this._api.setImage1Url(this.url);
     };
     console.log('printing');
     // console.log(this.shortLink);

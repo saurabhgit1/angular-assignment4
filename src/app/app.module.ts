@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { DisplayComponent } from './display/display.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InputComponent } from './input/input.component'
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Display2Component } from './display2/display2.component';
 
 @NgModule({
@@ -20,7 +20,8 @@ import { Display2Component } from './display2/display2.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -10,15 +10,12 @@ export class DisplayComponent implements OnInit {
 
   data_photo=[];
 
-  abc:any;
-
   constructor(private photosservice: PhotosService) { }
 
   ngOnInit(): void {
 
     this.photosservice.getPhotos().subscribe(data =>{ 
       // console.log(data);
-      this.abc = data;
       for(let i=0 ; i<4; i++){
         this.data_photo.push(data[i]);
       }

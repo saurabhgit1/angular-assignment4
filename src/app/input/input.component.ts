@@ -8,23 +8,24 @@ import { PhotosService } from '../photos.service';
   styleUrls: ['./input.component.css']
 })
 export class InputComponent implements OnInit {
+
+    title: string;
     shortLink =[];
-    tempShortLink: any;
+    // tempShortLink: any;
     loading: boolean = false; // Flag variable
     file: File = null;
-
     json1={
       "name":'',
       "image1_url":'',
       "image2_url":''
     }
 
-    myFormData = this.fb.group({
-      title: '',
-    });
+    // myFormData = this.fb.group({
+    //   title: '',
+    // });
 
   // selectedFile: File;
-  constructor(private photoService: PhotosService, private fb: FormBuilder) { }
+  constructor(private photoService: PhotosService) { }
 
   ngOnInit(): void {
 
@@ -47,18 +48,19 @@ export class InputComponent implements OnInit {
     // this.File = event.target.files[0];
     reader.onload = (_event) => {
       this.shortLink.push(reader.result);
-      this.tempShortLink = reader.result;
+      // this.tempShortLink = reader.result;
       // console.log(this.url);
       // this._api.setImage1Url(this.url);
     };
     console.log('printing');
-    console.log(this.shortLink);
+    // console.log(this.shortLink);
     
   }
 
   onUpload(){
 
-    this.json1.name = this.myFormData.value.title;
+    // this.json1.name = this.myFormData.value.title;
+    this.json1.name = this.title;
     this.json1.image1_url = this.shortLink[0];
     this.json1.image2_url = this.shortLink[1];
     console.log(this.json1.name);
@@ -70,7 +72,7 @@ export class InputComponent implements OnInit {
       console.log(res);
     })
 
-
+    //direct uploading of file
     // const formData = new FormData();
     // formData.append('image',this.selectedFile, this.selectedFile.name);
     // this.photoService.postPhotos(formData)

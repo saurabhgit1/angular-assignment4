@@ -8,11 +8,12 @@ import { PhotosService } from '../photos.service';
 })
 export class Display2Component implements OnInit {
   
-  image1 = this.photoService.imageurl;
+  images: any;
   constructor(private photoService: PhotosService) {
    }
 
   ngOnInit(): void {
+    this.images = this.photoService.imageurl;
   }
 
 }

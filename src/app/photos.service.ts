@@ -18,7 +18,7 @@ export class PhotosService {
    return this.http.get<Photos>("https://jsonplaceholder.typicode.com/photos");
   }
 
-  upload(data):Observable<any>{
+  upload(data:any):Observable<any>{
     const formData = new FormData(); 
         
       // Store form name as "file" with file data
